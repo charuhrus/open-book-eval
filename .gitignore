@@ -1,0 +1,15 @@
+# Dependencies (only @types/node, restored with `npm install`)
+node_modules/
+
+# Secrets: never commit API keys if a cloud provider or judge is added later
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# macOS and editor clutter
+.DS_Store
+.cursor/
+.vscode/

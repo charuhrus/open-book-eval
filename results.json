@@ -1,0 +1,1190 @@
+{
+  "evalId": "eval-s6g-2026-10-13T08:16:17",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-10-13T08:16:17.883Z",
+    "prompts": [
+      {
+        "raw": "You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\n{{document}}\n\nQUESTION: {{question}}",
+        "label": "src/prompts/assistant.txt: You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\n{{document}}\n\nQUESTION: {{question}}",
+        "id": "c2c9075ead846acdd0a2f8016f34d3e7fe548faaea737d1ec36606d8f0d48b1d",
+        "provider": "ollama:chat:llama3.2:3b",
+        "metrics": {
+          "score": 5,
+          "testPassCount": 4,
+          "testFailCount": 2,
+          "testErrorCount": 0,
+          "assertPassCount": 8,
+          "assertFailCount": 2,
+          "totalLatencyMs": 50206,
+          "tokenUsage": {
+            "prompt": 1179,
+            "completion": 135,
+            "cached": 0,
+            "total": 1314,
+            "numRequests": 6,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 891,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 869,
+              "prompt": 785,
+              "completion": 84,
+              "cached": 0,
+              "numRequests": 3,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 373,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "namedScoreWeights": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Found \"0.05 USD\"; all amounts match the document",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://assertions/retirementFee.ts"
+              }
+            }
+          ]
+        },
+        "id": "cf4cbf04-11f4-47ad-beab-75f7c48a6c98",
+        "latencyMs": 10588,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\nVerdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n\nQUESTION: What does it cost to retire one credit?",
+          "label": "src/prompts/assistant.txt: You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\n{{document}}\n\nQUESTION: {{question}}",
+          "config": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          }
+        },
+        "promptId": "c2c9075ead846acdd0a2f8016f34d3e7fe548faaea737d1ec36606d8f0d48b1d",
+        "promptIdx": 0,
+        "provider": {
+          "id": "ollama:chat:llama3.2:3b",
+          "label": ""
+        },
+        "response": {
+          "output": "It costs 0.05 USD per credit to retire a credit.",
+          "finishReason": "stop",
+          "tokenUsage": {
+            "prompt": 192,
+            "completion": 15,
+            "cached": 0,
+            "total": 207,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 179,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "Answerable - retirement fee",
+          "vars": {
+            "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+            "question": "What does it cost to retire one credit?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://assertions/retirementFee.ts"
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "tokenUsage": {
+          "prompt": 192,
+          "completion": 15,
+          "cached": 0,
+          "total": 207,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 179,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+          "question": "What does it cost to retire one credit?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains",
+                "value": "2 business days"
+              }
+            }
+          ]
+        },
+        "id": "1ebdaec1-ebf0-4eae-8b89-881959179674",
+        "latencyMs": 11140,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\nVerdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n\nQUESTION: How long does a transfer between two accounts take to settle?",
+          "label": "src/prompts/assistant.txt: You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\n{{document}}\n\nQUESTION: {{question}}",
+          "config": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          }
+        },
+        "promptId": "c2c9075ead846acdd0a2f8016f34d3e7fe548faaea737d1ec36606d8f0d48b1d",
+        "promptIdx": 0,
+        "provider": {
+          "id": "ollama:chat:llama3.2:3b",
+          "label": ""
+        },
+        "response": {
+          "output": "Transfers between two registry accounts settle within 2 business days.",
+          "finishReason": "stop",
+          "tokenUsage": {
+            "prompt": 195,
+            "completion": 14,
+            "cached": 0,
+            "total": 209,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 178,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "Answerable - transfer settlement time",
+          "vars": {
+            "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+            "question": "How long does a transfer between two accounts take to settle?"
+          },
+          "assert": [
+            {
+              "type": "icontains",
+              "value": "2 business days"
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "tokenUsage": {
+          "prompt": 195,
+          "completion": 14,
+          "cached": 0,
+          "total": 209,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 178,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+          "question": "How long does a transfer between two accounts take to settle?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 311,
+            "prompt": 284,
+            "completion": 27,
+            "cached": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 179,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "contains",
+                "value": "15%"
+              }
+            },
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "Question asked: What percentage of each issuance must a nature-based project put into the buffer pool?\nThe answer gives 15% as the buffer-pool percentage. A bare \"15%\" is a complete, correct answer.\nFAIL if the answer gives a different percentage, says it does not know,\nor applies 15% to something other than the buffer pool."
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "the answer contains the exact percentage 15%",
+              "tokensUsed": {
+                "total": 311,
+                "prompt": 284,
+                "completion": 27,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "cacheReadInputTokens": 179
+                }
+              },
+              "metadata": {
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nA nature-based project must deposit 15% of every issuance into the buffer pool.\\n</Output>\\n<Rubric>\\nQuestion asked: What percentage of each issuance must a nature-based project put into the buffer pool?\\nThe answer gives 15% as the buffer-pool percentage. A bare \\\"15%\\\" is a complete, correct answer.\\nFAIL if the answer gives a different percentage, says it does not know,\\nor applies 15% to something other than the buffer pool.\\n</Rubric>\"}]"
+              }
+            }
+          ]
+        },
+        "id": "abfa7da3-036c-49e7-9a10-e2c4487e0ad4",
+        "latencyMs": 9963,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\nVerdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n\nQUESTION: What percentage of each issuance must a nature-based project put into the buffer pool?",
+          "label": "src/prompts/assistant.txt: You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\n{{document}}\n\nQUESTION: {{question}}",
+          "config": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          }
+        },
+        "promptId": "c2c9075ead846acdd0a2f8016f34d3e7fe548faaea737d1ec36606d8f0d48b1d",
+        "promptIdx": 0,
+        "provider": {
+          "id": "ollama:chat:llama3.2:3b",
+          "label": ""
+        },
+        "response": {
+          "output": "A nature-based project must deposit 15% of every issuance into the buffer pool.",
+          "finishReason": "stop",
+          "tokenUsage": {
+            "prompt": 199,
+            "completion": 18,
+            "cached": 0,
+            "total": 217,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "Answerable - buffer pool",
+          "vars": {
+            "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+            "question": "What percentage of each issuance must a nature-based project put into the buffer pool?"
+          },
+          "assert": [
+            {
+              "type": "contains",
+              "value": "15%"
+            },
+            {
+              "type": "llm-rubric",
+              "value": "Question asked: What percentage of each issuance must a nature-based project put into the buffer pool?\nThe answer gives 15% as the buffer-pool percentage. A bare \"15%\" is a complete, correct answer.\nFAIL if the answer gives a different percentage, says it does not know,\nor applies 15% to something other than the buffer pool."
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "tokenUsage": {
+          "prompt": 199,
+          "completion": 18,
+          "cached": 0,
+          "total": 217,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 311,
+            "prompt": 284,
+            "completion": 27,
+            "cached": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 179,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+          "question": "What percentage of each issuance must a nature-based project put into the buffer pool?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 250,
+            "prompt": 223,
+            "completion": 27,
+            "cached": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 15,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "not-regex",
+                "value": "(^|[\\s$(])(0?\\.05\\b(?!\\s*cents?\\b)|(5|[Ff]ive) cents?\\b)"
+              }
+            },
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "The answer says it does not know or that the information is not available, and does not state any fee amount."
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "the answer does not state any fee amount",
+              "tokensUsed": {
+                "total": 250,
+                "prompt": 223,
+                "completion": 27,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "cacheReadInputTokens": 15
+                }
+              },
+              "metadata": {
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nI don't know.\\n</Output>\\n<Rubric>\\nThe answer says it does not know or that the information is not available, and does not state any fee amount.\\n</Rubric>\"}]"
+              }
+            }
+          ]
+        },
+        "id": "a422fd7f-c5d9-4368-b5a7-7aa5032e724f",
+        "latencyMs": 11437,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\nVerdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n\nQUESTION: What is the fee to issue a credit?",
+          "label": "src/prompts/assistant.txt: You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\n{{document}}\n\nQUESTION: {{question}}",
+          "config": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          }
+        },
+        "promptId": "c2c9075ead846acdd0a2f8016f34d3e7fe548faaea737d1ec36606d8f0d48b1d",
+        "promptIdx": 0,
+        "provider": {
+          "id": "ollama:chat:llama3.2:3b",
+          "label": ""
+        },
+        "response": {
+          "output": "I don't know.",
+          "finishReason": "stop",
+          "tokenUsage": {
+            "prompt": 192,
+            "completion": 6,
+            "cached": 0,
+            "total": 198,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 178,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "Hallucination trap - issuance fee (not in document)",
+          "vars": {
+            "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+            "question": "What is the fee to issue a credit?"
+          },
+          "assert": [
+            {
+              "type": "not-regex",
+              "value": "(^|[\\s$(])(0?\\.05\\b(?!\\s*cents?\\b)|(5|[Ff]ive) cents?\\b)"
+            },
+            {
+              "type": "llm-rubric",
+              "value": "The answer says it does not know or that the information is not available, and does not state any fee amount."
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 3,
+        "tokenUsage": {
+          "prompt": 192,
+          "completion": 6,
+          "cached": 0,
+          "total": 198,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 178,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 250,
+            "prompt": 223,
+            "completion": 27,
+            "cached": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 15,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+          "question": "What is the fee to issue a credit?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "error": "Expected output to not contain \"don't know\"",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "Expected output to not contain \"don't know\"",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Expected output to not contain \"don't know\"",
+              "assertion": {
+                "type": "not-icontains",
+                "value": "don't know"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "regex",
+                "value": "\\b([Nn]o|cannot|can't|not eligible)\\b"
+              }
+            }
+          ]
+        },
+        "id": "ee3420c1-4d96-47dd-89d5-260df8726995",
+        "latencyMs": 3196,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\nVerdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n\nQUESTION: Can I use my 2015-vintage credits for CORSIA?",
+          "label": "src/prompts/assistant.txt: You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\n{{document}}\n\nQUESTION: {{question}}",
+          "config": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          }
+        },
+        "promptId": "c2c9075ead846acdd0a2f8016f34d3e7fe548faaea737d1ec36606d8f0d48b1d",
+        "promptIdx": 0,
+        "provider": {
+          "id": "ollama:chat:llama3.2:3b",
+          "label": ""
+        },
+        "response": {
+          "output": "I don't know. According to the document, credits with a vintage year earlier than 2016 cannot be used for CORSIA claims, but it does not specify what happens to credits from 2015.",
+          "finishReason": "stop",
+          "tokenUsage": {
+            "prompt": 197,
+            "completion": 43,
+            "cached": 0,
+            "total": 240,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 178,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          }
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "description": "Negation rule - pre-2016 vintage for CORSIA",
+          "vars": {
+            "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+            "question": "Can I use my 2015-vintage credits for CORSIA?"
+          },
+          "assert": [
+            {
+              "type": "not-icontains",
+              "value": "don't know"
+            },
+            {
+              "type": "regex",
+              "value": "\\b([Nn]o|cannot|can't|not eligible)\\b"
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 4,
+        "tokenUsage": {
+          "prompt": 197,
+          "completion": 43,
+          "cached": 0,
+          "total": 240,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 178,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+          "question": "Can I use my 2015-vintage credits for CORSIA?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "error": "Expected output to match regex \"\\b550(\\.00)?\\b\"",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "Expected output to match regex \"\\b550(\\.00)?\\b\"",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 308,
+            "prompt": 278,
+            "completion": 30,
+            "cached": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 179,
+              "cacheCreationInputTokens": 0
+            }
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Expected output to match regex \"\\b550(\\.00)?\\b\"",
+              "assertion": {
+                "type": "regex",
+                "value": "\\b550(\\.00)?\\b"
+              }
+            },
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "The answer gives a first-year total of 550 USD (500 USD annual fee + 50 USD for retiring 1,000 credits).\nMentioning an assumption that the annual fee applies in the first year is acceptable.\n"
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "the answer gives a first-year total of 550 USD",
+              "tokensUsed": {
+                "total": 308,
+                "prompt": 278,
+                "completion": 30,
+                "cached": 0,
+                "numRequests": 1,
+                "completionDetails": {
+                  "cacheReadInputTokens": 179
+                }
+              },
+              "metadata": {
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nYou will pay an annual maintenance fee of 500 USD. In addition, you will pay 0.05 USD per credit for retiring 1,000 credits, totaling 50 USD.\\n</Output>\\n<Rubric>\\nThe answer gives a first-year total of 550 USD (500 USD annual fee + 50 USD for retiring 1,000 credits).\\nMentioning an assumption that the annual fee applies in the first year is acceptable.\\n\\n</Rubric>\"}]"
+              }
+            }
+          ]
+        },
+        "id": "270c6f91-c004-44dc-a6bb-49eeb2b78105",
+        "latencyMs": 3882,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\nVerdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n\nQUESTION: What would I pay in my first year if I open an account and retire 1,000 credits?",
+          "label": "src/prompts/assistant.txt: You are a support assistant for the Verdant Ledger Registry.\nAnswer the QUESTION using ONLY the DOCUMENT below.\nIf the answer is not in the DOCUMENT, reply exactly: I don't know.\nDo not use outside knowledge. Keep answers to one or two sentences.\n\nDOCUMENT:\n{{document}}\n\nQUESTION: {{question}}",
+          "config": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          }
+        },
+        "promptId": "c2c9075ead846acdd0a2f8016f34d3e7fe548faaea737d1ec36606d8f0d48b1d",
+        "promptIdx": 0,
+        "provider": {
+          "id": "ollama:chat:llama3.2:3b",
+          "label": ""
+        },
+        "response": {
+          "output": "You will pay an annual maintenance fee of 500 USD. In addition, you will pay 0.05 USD per credit for retiring 1,000 credits, totaling 50 USD.",
+          "finishReason": "stop",
+          "tokenUsage": {
+            "prompt": 204,
+            "completion": 39,
+            "cached": 0,
+            "total": 243,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 178,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          }
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "description": "Multi-fact - first-year fees",
+          "vars": {
+            "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+            "question": "What would I pay in my first year if I open an account and retire 1,000 credits?"
+          },
+          "assert": [
+            {
+              "type": "regex",
+              "value": "\\b550(\\.00)?\\b"
+            },
+            {
+              "type": "llm-rubric",
+              "value": "The answer gives a first-year total of 550 USD (500 USD annual fee + 50 USD for retiring 1,000 credits).\nMentioning an assumption that the annual fee applies in the first year is acceptable.\n"
+            }
+          ],
+          "options": {
+            "provider": {
+              "id": "ollama:chat:llama3.2:3b",
+              "config": {
+                "temperature": 0
+              }
+            }
+          },
+          "metadata": {}
+        },
+        "testIdx": 5,
+        "tokenUsage": {
+          "prompt": 204,
+          "completion": 39,
+          "cached": 0,
+          "total": 243,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 178,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 308,
+            "prompt": 278,
+            "completion": 30,
+            "cached": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 179,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n",
+          "question": "What would I pay in my first year if I open an account and retire 1,000 credits?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      }
+    ],
+    "stats": {
+      "successes": 4,
+      "failures": 2,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 1179,
+        "completion": 135,
+        "cached": 0,
+        "total": 1314,
+        "numRequests": 6,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 891,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 869,
+          "prompt": 785,
+          "completion": 84,
+          "cached": 0,
+          "numRequests": 3,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 373,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "durationMs": 18874,
+      "evaluationDurationMs": 18874
+    }
+  },
+  "config": {
+    "description": "Open-book registry assistant",
+    "prompts": [
+      "file://src/prompts/assistant.txt"
+    ],
+    "providers": [
+      "ollama:chat:llama3.2:3b"
+    ],
+    "tests": [
+      {
+        "description": "Answerable - retirement fee",
+        "vars": {
+          "question": "What does it cost to retire one credit?"
+        },
+        "assert": [
+          {
+            "type": "javascript",
+            "value": "file://assertions/retirementFee.ts"
+          }
+        ]
+      },
+      {
+        "description": "Answerable - transfer settlement time",
+        "vars": {
+          "question": "How long does a transfer between two accounts take to settle?"
+        },
+        "assert": [
+          {
+            "type": "icontains",
+            "value": "2 business days"
+          }
+        ]
+      },
+      {
+        "description": "Answerable - buffer pool",
+        "vars": {
+          "question": "What percentage of each issuance must a nature-based project put into the buffer pool?"
+        },
+        "assert": [
+          {
+            "type": "contains",
+            "value": "15%"
+          },
+          {
+            "type": "llm-rubric",
+            "value": "Question asked: What percentage of each issuance must a nature-based project put into the buffer pool?\nThe answer gives 15% as the buffer-pool percentage. A bare \"15%\" is a complete, correct answer.\nFAIL if the answer gives a different percentage, says it does not know,\nor applies 15% to something other than the buffer pool."
+          }
+        ]
+      },
+      {
+        "description": "Hallucination trap - issuance fee (not in document)",
+        "vars": {
+          "question": "What is the fee to issue a credit?"
+        },
+        "assert": [
+          {
+            "type": "not-regex",
+            "value": "(^|[\\s$(])(0?\\.05\\b(?!\\s*cents?\\b)|(5|[Ff]ive) cents?\\b)"
+          },
+          {
+            "type": "llm-rubric",
+            "value": "The answer says it does not know or that the information is not available, and does not state any fee amount."
+          }
+        ]
+      },
+      {
+        "description": "Negation rule - pre-2016 vintage for CORSIA",
+        "vars": {
+          "question": "Can I use my 2015-vintage credits for CORSIA?"
+        },
+        "assert": [
+          {
+            "type": "not-icontains",
+            "value": "don't know"
+          },
+          {
+            "type": "regex",
+            "value": "\\b([Nn]o|cannot|can't|not eligible)\\b"
+          }
+        ]
+      },
+      {
+        "description": "Multi-fact - first-year fees",
+        "vars": {
+          "question": "What would I pay in my first year if I open an account and retire 1,000 credits?"
+        },
+        "assert": [
+          {
+            "type": "regex",
+            "value": "\\b550(\\.00)?\\b"
+          },
+          {
+            "type": "llm-rubric",
+            "value": "The answer gives a first-year total of 550 USD (500 USD annual fee + 50 USD for retiring 1,000 credits).\nMentioning an assumption that the annual fee applies in the first year is acceptable.\n"
+          }
+        ]
+      }
+    ],
+    "outputPath": [
+      "results.json"
+    ],
+    "extensions": [],
+    "defaultTest": {
+      "vars": {
+        "document": "Verdant Ledger Registry - Operating Rules (v2.1)\n1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.\n2. Retiring a credit costs 0.05 USD per credit.\n3. Transfers between two registry accounts settle within 2 business days.\n4. Nature-based projects must deposit 15% of every issuance into the buffer pool.\n5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.\n"
+      },
+      "options": {
+        "provider": {
+          "id": "ollama:chat:llama3.2:3b",
+          "config": {
+            "temperature": 0
+          }
+        }
+      }
+    },
+    "basePath": "/Users/rc/Xpansiv AI prep/open-book-eval"
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.124.1",
+    "nodeVersion": "v24.21.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "exportedAt": "2026-10-13T08:16:37.755Z",
+    "evaluationCreatedAt": "2026-10-13T08:16:17.883Z"
+  },
+  "vars": [
+    "document",
+    "question"
+  ],
+  "runtimeOptions": {
+    "eventSource": "cli",
+    "showProgressBar": true,
+    "repeat": 1,
+    "maxConcurrency": 4,
+    "cache": true
+  }
+}

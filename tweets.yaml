@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+
+# Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
+
+description: 'My eval'
+
+prompts:
+  - 'Write a tweet about {{topic}}'
+  - 'Write a concise, funny tweet about {{topic}}'
+
+providers:
+  - 'ollama:chat:llama3.2:3b'
+
+# Applied to every test below, in addition to each test's own asserts
+defaultTest:
+  assert:
+    - type: javascript
+      metric: length # ← named score
+      value: |
+        const len = output.length;
+        if (len === 0) return { pass: false, score: 0, reason: 'Empty output' };
+        return {
+          pass: len <= 280,
+          score: Math.max(0, 1 - len / 280),
+          reason: `Length ${len}/280`,
+        };
+
+tests:
+  - vars:
+      topic: bananas
+    assert:
+      - type: icontains
+        metric: on-topic # ← named score
+        value: bananas
+
+  - vars:
+      topic: avocado toast
+    assert:
+      # For more information on assertions, see https://promptfoo.dev/docs/configuration/expected-outputs
+
+      # Make sure output contains the word "avocado"
+      - type: icontains
+        metric: on-topic # ← named score
+        value: avocado toast
+
+  - vars:
+      topic: new york city
+    assert:
+      # For more information on model-graded evals, see https://promptfoo.dev/docs/configuration/expected-outputs/model-graded
+      - type: llm-rubric
+        metric: humour # ← named score
+        value: ensure that the output is funny
+
+# *******************************************************
+#  - vars:
+#      question: What is the fee to issue a credit?
+#    assert:
+#      - type: javascript
+#        value: "!output.includes('0.05')"
+#      - type: llm-rubric
+#        value: The answer says the information is not in the document and does not state any fee.
+# *******************************************************

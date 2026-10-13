@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: 'Open-book registry assistant'
+
+prompts:
+  - file://src/prompts/assistant.txt
+
+# Model under test
+providers:
+  - 'ollama:chat:llama3.2:3b'
+
+defaultTest:
+  vars:
+    document: |
+      Verdant Ledger Registry - Operating Rules (v2.1)
+      1. Opening an account is free. Each account pays an annual maintenance fee of 500 USD.
+      2. Retiring a credit costs 0.05 USD per credit.
+      3. Transfers between two registry accounts settle within 2 business days.
+      4. Nature-based projects must deposit 15% of every issuance into the buffer pool.
+      5. Credits with a vintage year earlier than 2016 cannot be used for CORSIA claims.
+  # Judge for every llm-rubric: same as the model it grades, but can be changed
+  options:
+    provider:
+      id: 'ollama:chat:llama3.2:3b'
+      config:
+        temperature: 0
+
+tests:
+  - description: 'Answerable - retirement fee'
+    vars:
+      question: What does it cost to retire one credit?
+    assert:
+      # Parses every money amount and checks for exactly 0.05 USD
+      - type: javascript
+        value: file://assertions/retirementFee.ts
+
+  - description: 'Answerable - transfer settlement time'
+    vars:
+      question: How long does a transfer between two accounts take to settle?
+    assert:
+      - type: icontains
+        value: '2 business days'
+
+  - file://cases/bufferPool.ts
+
+  - description: 'Hallucination trap - issuance fee (not in document)'
+    vars:
+      question: What is the fee to issue a credit?
+    assert:
+      - type: not-regex
+        value: '(^|[\s$(])(0?\.05\b(?!\s*cents?\b)|(5|[Ff]ive) cents?\b)'
+      - type: llm-rubric
+        value: The answer says it does not know or that the information is not available, and does not state any fee amount.
+
+  - description: 'Negation rule - pre-2016 vintage for CORSIA'
+    vars:
+      question: Can I use my 2015-vintage credits for CORSIA?
+    assert:
+      - type: not-icontains
+        value: "don't know"
+      - type: regex
+        value: '\b([Nn]o|cannot|can''t|not eligible)\b'
+
+      # Alternative approach instead of two types above
+      # - type: llm-rubric
+      #   provider: 'ollama:chat:qwen2.5:7b'
+      #   value: |
+      #     The answer clearly says No (2015-vintage credits cannot be used for CORSIA).
+      #     An answer of "I don't know" is a FAIL.
+
+  - description: 'Multi-fact - first-year fees'
+    vars:
+      question: What would I pay in my first year if I open an account and retire 1,000 credits?
+    assert:
+      - type: regex
+        value: '\b550(\.00)?\b'
+      - type: llm-rubric
+        value: |
+          The answer gives a first-year total of 550 USD (500 USD annual fee + 50 USD for retiring 1,000 credits).
+          Mentioning an assumption that the annual fee applies in the first year is acceptable.

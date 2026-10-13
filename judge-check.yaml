@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: 'Judge check - buffer pool rubric'
+
+# echo returns the prompt as-is, so each test's "output" is exactly {{answer}}
+prompts:
+  - '{{answer}}'
+providers:
+  - echo
+
+defaultTest:
+  options:
+    provider:
+      id: 'ollama:chat:llama3.2:3b'
+      config:
+        temperature: 0
+
+tests: file://cases/bufferPool.judge.ts
